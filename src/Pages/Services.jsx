@@ -55,7 +55,7 @@ export default function Services() {
     <div className="max-w-[1440px] mx-auto">
 
       {/* page wrapper */}
-      <div className="mx-auto px-[15px] sm:px-[30px] lg:pl-[120px] lg:pr-[175px] font-poppins mb-[120px] lg:mb-[161px]">
+      <div className="mx-auto px-[15px] sm:px-[30px] lg:px-[120px] font-poppins mb-[80px] lg:mb-[120px] lg:mb-[161px]">
 
         {/* links */}
         <div className="mt-3 font-metropolis text-[14px] md:text-[16px] leading-[24px] md:leading-[30px] text-[#151515]">
@@ -124,7 +124,9 @@ export default function Services() {
       </div>
 
       <Testimonials />
+      <div className="max-w-[1330px] mx-auto">
       <FAQTechStack />
+      </div>
       <Footer />
 
     </div>

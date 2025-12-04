@@ -2,8 +2,13 @@ export default function Title({ icon, text, description }) {
   return (
     <div className="flex flex-col">
       <h2 
-        className="flex items-center text-[#000000] font-extrabold text-[36px] leading-[27px]"
-        style={{ fontFamily: "Poppins", fontWeight: 800, margin: 0 }} // بدون margin
+        className="flex items-center gap-[12.36px] text-[#000000] 
+        font-poppins font-extrabold 
+        text-[26px] leading-[20px] 
+        sm:text-[32px] sm:leading-[24px] 
+        lg:text-[40px] lg:leading-[27px] 
+        mb-[24px] sm:mb-[28px] lg:mb-[29.74px]"
+        
       >
         <img
           src={icon}
@@ -13,7 +18,7 @@ export default function Title({ icon, text, description }) {
         {text}
       </h2>
       {description && (
-        <div style={{ marginTop: "16px", marginLeft: 0 }}>
+        <div>
           {description}
         </div>
       )}

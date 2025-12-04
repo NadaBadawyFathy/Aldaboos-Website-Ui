@@ -91,7 +91,8 @@ export default function Home() {
   const logos = [ReactLogo, LaravelLogo, OdooLogo, NextLogo];
 
   return (
-    <div className="font-poppins bg-[#F9F9FE] flex flex-col gap-[px] mx-auto overflow-hidden" style={{width:"1440px"}}>
+    <div className="max-w-[1440px] font-poppins bg-[#F9F9FE] flex flex-col 
+    gap-[px] mx-auto overflow-hidden">
 
 {/* ---------- Landing  Section ---------- */}
  
@@ -228,90 +229,105 @@ export default function Home() {
 
 
 {/* ---------- Our Services Section ---------- */}
-  <div className="mx-auto flex flex-col gap-[30px] max-w-[1646px] px-4 sm:px-6 lg:px-0 relative mt-[70px]" style={{padding:"40px"}}>
+  <div className="mx-auto flex flex-col gap-[30px] max-w-[1646px] px-4 sm:px-6 
+  lg:px-0 relative mt-[70px]">
 
-    {/* First Row: Title + First 2 Cards */}
-    <div className="flex justify-between gap-[24px] ">
-      {/* Title */}
-      <div className="flex flex-col p-[22px] " style={{ width: "394px", height: "528px" }}>
-        <Title 
-          icon={title} 
-          text="Our Services" 
-          description={
-            <p className="font-poppins font-[500] text-[24px] ml-[33px] mt-[15px]">
-              Elevate your brand with innovative design, seamless development, and strategic digital solutions.
-            </p>
-          }
-
+  {/* First Row: Title + First 2 Cards */}
+  <div className="flex flex-col lg:flex-row justify-between gap-[24px]">
+    {/* Title */}
+    <div 
+      className="flex flex-col lg:mt-[30px]"
+      style={{ width: "100%", maxWidth: "394px", height: "auto", minHeight: "auto" }}
+    >
+      <Title 
+        icon={title} 
+        text="Our Services" 
+        description={
+          <p className="font-poppins font-[500] text-[20px] sm:text-[22px] 
+          md:text-[24px] ml-0 sm:ml-[33px]">
+            Elevate your brand with innovative design, seamless development, and strategic digital solutions.
+          </p>
+        }
+      />
+      <div className="flex-1 flex items-center justify-center mt-4 sm:mt-6 lg:mt-[0]">
+        <img 
+          src={OurServicesImg} 
+          alt="Our Services" 
+          className="absolute sm:max-w-[400px] lg:max-w-[480px]
+          lg:h-[136.81px] lg:static left-0 lg:left-[-70px] 
+          top-[350px] sm:top-[380px] lg:top-[400px]" 
         />
-        <div className="flex-1 flex items-center justify-center">
-          <img 
-            src={OurServicesImg} 
-            alt="Our Services" 
-            style={{ maxWidth: "480px", height: "136.81px", position: "absolute", left: "-70px" ,top:'400px' }} 
-          />
-        </div>
       </div>
+    </div>
 
-      {/* First 2 Service Cards */}
+    {/* First 2 Service Cards */}
+    <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-[24px]">
       {serviceCards.slice(0, 2).map((card, idx) => (
         <div 
           key={idx} 
-          className="flex flex-col justify-between p-[22px]" 
-          style={{ ...cardStyle, backgroundColor: "#E9EFFF", width: "394px", height: "528px" }}
+          className="flex flex-col justify-between p-[22px] bg-[#E9EFFF] rounded-[20px] w-full sm:w-[48%] lg:w-[394px] h-auto sm:h-[500px] lg:h-[528px]"
         >
           <div>
             <div className="flex justify-between items-start mb-[15px]">
-              <h3 style={{ fontFamily: "Poppins, sans-serif",
-                 fontWeight: 600, fontSize: "32px", lineHeight: "34px" }}
-                 dangerouslySetInnerHTML={{ __html: card.title }} >
-                
+              <h3 className="font-poppins font-semibold text-[24px] sm:text-[28px] lg:text-[32px] leading-[28px] sm:leading-[32px] lg:leading-[34px]"
+                dangerouslySetInnerHTML={{ __html: card.title }} >
               </h3>
-              <div className="w-[60px] h-[60px]">
+              <div className="w-[50px] sm:w-[55px] lg:w-[60px] h-[50px] sm:h-[55px] lg:h-[60px]">
                 <img src={arrow} alt="" />
               </div>
             </div>
-            <p style={textStyle} className="mb-[15px]">{card.text}</p>
+            <p className="text-[14px] sm:text-[15px] md:text-[16px] lg:text-[16px] mb-[15px]">{card.text}</p>
           </div>
-          <img src={card.img} alt="" style={imgStyle} />
+          <div className="mt-[20px] sm:mt-[25px] md:mt-[30px]">
+                <img
+                  src={card.img}
+                  className="w-full h-auto sm:h-[300px] md:h-[300px] lg:h-[auto] object-cover rounded-[16px]"
+                />
+        </div>
         </div>
       ))}
     </div>
-
-    {/* Second Row: Remaining Cards */}
-    <div className="flex justify-center gap-[24px]">
-      {serviceCards.slice(2).map((card, idx) => (
-        <div 
-          key={idx} 
-          className="flex flex-col justify-between p-[20px]" 
-          style={{ ...cardStyle, backgroundColor: "#E9EFFF", width: "394px", height: "528px" }}
-        >
-          <div>
-            <div className="flex justify-between items-start mb-[15px]">
-              <h3 style={{ fontFamily: "Poppins, sans-serif", 
-                fontWeight: 600, fontSize: "32px", lineHeight: "34px" }}
-                dangerouslySetInnerHTML={{ __html: card.title }}>
-               
-              </h3>
-              <div className="w-[60px] h-[60px]">
-                <img src={arrow} alt="" />
-              </div>
-            </div>
-            <p style={textStyle} className="text-[16px]">{card.text}</p>
-          </div>
-          <img src={card.img} alt="" style={imgStyle} />
-        </div>
-      ))}
-    </div>
-
   </div>
+
+  {/* Second Row: Remaining Cards */}
+  <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-[24px]">
+    {serviceCards.slice(2).map((card, idx) => (
+      <div 
+        key={idx} 
+        className="flex flex-col justify-between p-[20px] bg-[#E9EFFF] rounded-[20px] w-full sm:w-[48%] lg:w-[394px] h-auto sm:h-[500px] lg:h-[528px]"
+      >
+        <div>
+          <div className="flex justify-between items-start mb-[15px]">
+            <h3 className="font-poppins font-semibold text-[24px] sm:text-[28px] lg:text-[32px] leading-[28px] sm:leading-[32px] lg:leading-[34px]"
+              dangerouslySetInnerHTML={{ __html: card.title }}>
+            </h3>
+            <div className="w-[50px] sm:w-[55px] lg:w-[60px] h-[50px] sm:h-[55px] lg:h-[60px]">
+              <img src={arrow} alt="" />
+            </div>
+          </div>
+          <p className="text-[14px] sm:text-[15px] md:text-[16px] lg:text-[16px]">{card.text}</p>
+        </div>
+        {/* <img src={card.img} alt="" className="w-full h-auto 
+        sm:h-[180px] md:h-[200px] lg:h-[auto] object-contain" /> */}
+
+        <div className="mt-[20px] sm:mt-[25px] md:mt-[30px]">
+                <img
+                  src={card.img}
+                  className="w-full h-auto sm:h-[300px] md:h-[300px] lg:h-[auto] object-cover rounded-[16px]"
+                />
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
 
       {/* ---------- How We Work Section ---------- */}
 
 
 <section className=" max-w-[1646px]">
-  <div style={{padding:"40px"}}>
+  <div className="p-[20px] lg:p-[40px]">
       <WeWork />
 </div>
 </section>
@@ -320,20 +336,19 @@ export default function Home() {
       
 
       {/* ---------- Stats Section ---------- */}
-        <div className=" mx-auto flex flex-col relative max-w-[1236px]
+        <div className=" mx-auto flex flex-col max-w-[1233px] mx-auto px-[20px]
         lg:flex-row items-center relative">
           <div className="flex-1">
-            <p className="text-[#000000] font-poppins font-[700] text-[32px] sm:text-[36px] md:text-[40px] 
-            lg:text-[35px] leading-[40px] sm:leading-[44px] md:leading-[47px] indent-[2px]
+            <p className="text-[#000000] font-poppins font-[700] text-[22px] sm:text-[30px] md:text-[40px] 
+            lg:text-[35px] leading-[35px] sm:leading-[44px] md:leading-[47px] indent-[2px]
             lg:leading-[47px]">
-              <span
+              <span className="text-[35px] sm:text-[50px] lg:text-[60px]"
                 style={{
                   width: "59px",
                   height: "71px",
                   background: "linear-gradient(0deg, #34377A 0%, #354281 11.38%, #375C94 34.52%, #3A88BA 67.25%, #36C2F1 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
-                  fontSize: "60px",
                   fontWeight: 500,
                 }}
               >
@@ -342,9 +357,9 @@ export default function Home() {
               aboos Masr is a creative design agency with a top-tier team of talented and dedicated designers committed to delivering exceptional designs.
             </p>
           </div>
-          <div className="flex-1 flex justify-start lg:justify-end mt-6 lg:mt-0 relative">
-            <img src={StatsImge} alt="Our Services" className="max-w-full h-auto" 
-            style={{ width: "100%", maxWidth: "350px", position: "relative" ,right:"-100px", top:'55px' }} />
+          <div className="flex-1 flex justify-start lg:justify-end relative">
+            <img src={StatsImge} alt="Our Services" className="max-w-full h-auto top-[20px] lg:top-[55px]" 
+            style={{ width: "100%", maxWidth: "350px", position: "relative" ,right:"-100px"}} />
           </div>
         </div>
         <div className="mx-auto px-4 sm:px-6 lg:px-0 mt-[30px] p-8 ">
@@ -354,7 +369,7 @@ export default function Home() {
 
 {/* ---------- Projects Section ---------- */}
 
-  <div className="flex flex-col gap-[40px] mx-auto px-4 sm:px-6 lg:px-0 my-[90px]">
+  <div className="flex flex-col gap-[40px] mx-auto px-4 sm:px-6 lg:px-0 my-[50px] lg:my-[80px]">
 
     {/* Title */}
     <div>
@@ -386,44 +401,54 @@ export default function Home() {
     >
       {/* Image */}
       <div
-        className={`w-full h-[430px] bg-[#E9EFFF] rounded-[20px] 
+        className={`w-full p-[16px] sm:p-[20px] lg:p-[25px] bg-[#E9EFFF] rounded-[20px] 
           flex items-center justify-center overflow-hidden
           ${idx % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}
       >
         <img
           src={project.img}
           alt={project.title}
-          className="w-[450px] h-[380px] object-cover rounded-[20px]"
+          className="w-full rounded-[20px]
+                h-[240px] sm:h-[260px] lg:h-[380px]
+                object-cover"
         />
       </div>
 
       {/* Content */}
       <div
-        className={`flex flex-col justify-between h-[400px]
+        className={`flex flex-col justify-between  lg:h-[400px]
           ${idx % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}
       >
         {/* Title + Arrow */}
         <div className="flex items-center justify-between">
-          <h3 className="text-[32px] lg:text-[60px] font-semibold">
+          <h3 className="text-[22px] sm:text-[40px] lg:text-[60px]
+              font-[600] text-[#000000] leading-[28px] sm:leading-[32px] lg:leading-[34px] font-semibold">
             {project.title}
           </h3>
 
-          <div className="w-[60px] h-[60px]">
+          <div className="w-[48px] sm:w-[54px] lg:w-[60px]">
             <img src={arrowPro} alt="" />
           </div>
         </div>
 
         {/* Description */}
-        <p className="font-[Poppins] text-[22px] leading-[32px] text-black">
+        <p className="mt-[20px] sm:mt-[28px] lg:mt-[40px]
+              text-[16px] sm:text-[20px] lg:text-[22px]
+              leading-[28px] sm:leading-[32px] lg:leading-[35px]
+              text-[#000]">
           {project.description}
         </p>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-[13px] mt-3">
+        <div className="flex flex-wrap  gap-[8px] sm:gap-[10px] lg:gap-[13px] mt-3">
           {project.tags.map((tag, i) => (
             <span
               key={i}
-              className="px-[20px] py-[10px] border border-[#E8E8E8] rounded-[25px] text-[14px] text-[#000]"
+              className="px-[14px] sm:px-[16px] lg:px-[20px]
+                  py-[8px] sm:py-[10px] lg:py-[13px]
+                  border border-[#E8E8E8]
+                  text-[12px] sm:text-[13px] lg:text-[14px]
+                  rounded-[25px]"
             >
               {tag}
             </span>
@@ -436,9 +461,9 @@ export default function Home() {
 
 
     {/* View All Button */}
-    <div className="flex justify-center mt-[30px]">
+    <div className="flex justify-center mt-[20px] lg:mt-[30px]">
       <button
-        className="text-white"
+        className="text-white "
         style={{
           width: "228px",
           height: "51px",
@@ -471,10 +496,10 @@ export default function Home() {
           <div className="max-w-[1300px] mx-auto mb-[130px]">
             <FAQTechStack faqs={faqs} />
 
-            <div className="pl-[40px]">
+            <div className=" pl-[20px] lg:pl-[40px]">
 
-              <h3 className="font-[700] text-[36px]">Tech Stack </h3>
-              <p className="font-[400] text-[24px] mb-[35px]">We excel at quality apps development.</p>
+              <h3 className="font-[700] text-[28px] lg:text-[36px]">Tech Stack </h3>
+              <p className="font-[400] text-[20px] lg:text-[24px] mb-[35px]">We excel at quality apps development.</p>
             </div>
             {/* Tech Stack Images */}
           <div className="flex justify-center gap-3 flex-wrap">
