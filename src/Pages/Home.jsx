@@ -17,9 +17,6 @@ import FingerprintBG from "../assets/fingerprint-home.svg";
 import Phone from "../assets/phone-landing.svg";
 import arrow from "../assets/small-stats.svg";
 import arrowPro from "../assets/arrow.svg";
-import card from "../assets/card.svg";
-
-import { GoArrowUpRight } from "react-icons/go";
 
 // Tech Stack Images
 import ReactLogo from "../assets/react-logo.svg";
@@ -28,12 +25,12 @@ import OdooLogo from "../assets/odoo-logo.svg";
 import NextLogo from "../assets/nextjs-logo.svg";
 
 // ---------- External Components ----------
-import WeWorkSection from "../components/WeWork";
-import StatsSection from "../components/StatsSection";
-import Title from "../components/Title";
-import Testimonials from "../components/Testimonials";
-import FAQTechStack from "../components/FAQTechStack";
-import ContactForm from "../components/ContactForm"; 
+import WeWork from "../Components/WeWork";
+import StatsSection from "../Components/StatsSection";
+import Title from "../Components/Title";
+import Testimonials from "../Components/Testimonials";
+import FAQTechStack from "../Components/FAQTechStack";
+import ContactForm from "../Components/ContactForm"; 
 
 export default function Home() {
   const serviceCards = [
@@ -315,7 +312,7 @@ export default function Home() {
 
 <section className=" max-w-[1646px]">
   <div style={{padding:"40px"}}>
-      <WeWorkSection />
+      <WeWork />
 </div>
 </section>
 
@@ -351,7 +348,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mx-auto px-4 sm:px-6 lg:px-0 mt-[30px] p-8 ">
-          <StatsSection />
+          <StatsSection/>
         </div>
 
 
@@ -585,11 +582,11 @@ export default function Home() {
   </div>
 
   {/* Image Under Form */}
-  <img
+  {/* <img
     src={card}
     alt=""
     className="absolute top-[-20%]  max-w-[503px]"
-  />
+  /> */}
 
 </div>
 

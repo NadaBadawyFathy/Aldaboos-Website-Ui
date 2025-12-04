@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import finger from "../assets/fingerprint-about.svg";
 import title from "../assets/icon-title.svg";
@@ -162,7 +161,8 @@ const posts = [
           </div>
 
           {/* title + arrow */}
-          <div className="flex justify-between items-center mt-[25px] sm:mt-[35px] lg:mt-[49px]">
+          <div className="lg:h-[102px] flex justify-between items-center mt-[25px] 
+          sm:mt-[35px] lg:mt-[49px]">
             <h3
               className="
               text-[18px] sm:text-[26px] lg:text-[36px]
