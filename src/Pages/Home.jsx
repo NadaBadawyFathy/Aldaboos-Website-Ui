@@ -97,134 +97,137 @@ export default function Home() {
 {/* ---------- Landing  Section ---------- */}
  
 <section
-  className="text-white"
-  style={{
-    background: "#343A7D",
-    position: "relative",
-    overflow: "hidden",
-    padding: "70px",
-  }}
+  className="text-white relative overflow-hidden bg-[#343A7D] 
+  px-4 sm:px-10 lg:px-[70px] py-[70px]"
 >
+
   {/* Background Image */}
   <img
     src={FingerprintBG}
-    alt="Fingerprint Background"
-    style={{
-      position: "absolute",
-      right: "0",
-      bottom: 0,
-      width: "548.5px",
-      height: "500px",
-      objectFit: "contain",
-      objectPosition: "bottom right",
-      overflow: "hidden",
-    }}
+    alt="bg"
+    className="
+      absolute right-0 bottom-[-20px]
+      w-[300px] h-[280px] sm:w-[420px] sm:h-[400px] lg:w-[548.5px] lg:h-[500px]
+      object-contain
+    "
   />
 
-  {/* Content Wrapper */}
-  <div className="flex flex-col lg:flex-row gap-[200px] items-start w-full px-[40px] pt-2">
+  {/* Content Container */}
+  <div
+    className="
+      flex flex-col lg:flex-row 
+      gap-[60px] sm:gap-[120px] lg:gap-[200px] 
+      items-start w-full
+      px-2 sm:px-6 lg:px-[40px]
+    "
+  >
 
-    {/* Left Text Section */}
-    <div className="flex flex-col gap-6 w-[707px]">
-      <h1 className=" w-[707px] font-extrabold text-[45px] leading-[54px] tracking-[0px] indent-[2px] font-poppins">
+    {/* Left Section */}
+    <div className="flex flex-col gap-4 sm:gap-6 w-full lg:w-[707px]">
+      
+      {/* Title 1 */}
+      <h1
+        className="
+          font-extrabold font-poppins
+          text-[28px] leading-[36px]
+          sm:text-[36px] sm:leading-[46px]
+          lg:text-[45px] lg:leading-[54px]
+        "
+      >
         Elevate Your Brand With Our
       </h1>
 
+      {/* Title 2 Stroke */}
       <h1
-        className="font-extrabold text-[55px] leading-[64px] font-poppins w-full"
+        className="
+          font-extrabold font-poppins
+          text-[36px] leading-[42px]
+          sm:text-[46px] sm:leading-[56px]
+          lg:text-[55px] lg:leading-[64px]
+        "
         style={{
           WebkitTextStroke: "2px white",
           color: "transparent",
-          textIndent: "2px",
-          letterSpacing: "0px",
         }}
       >
         Expertise Agency
       </h1>
 
+      {/* Paragraph */}
       <p
-        style={{
-          width: "544px",
-          paddingTop: "20px",
-          fontFamily: "Poppins, sans-serif",
-          fontSize: "24px",
-          fontWeight: "400",
-          lineHeight: "35px",
-          color: "#E7E7E7",
-          letterSpacing: "0px",
-          opacity: 1,
-        }}
+        className="
+          font-poppins text-[#E7E7E7]
+          text-[16px] leading-[26px] 
+          sm:text-[18px] sm:leading-[28px] 
+          lg:text-[24px] lg:leading-[35px] 
+          pt-3 sm:pt-5
+          opacity-90
+          max-w-[544px]
+        "
       >
         We craft cutting-edge digital experiences that captivate, engage, and convert.<br />
         Let’s build something extraordinary together.
       </p>
 
       {/* Buttons */}
-      <div className="flex gap-4 mt-4">
+      <div className="flex gap-3 sm:gap-4 mt-4">
         <button
-          className="text-white"
-          style={{
-            width: "201px",
-            height: "50px",
-            fontFamily: "Poppins, sans-serif",
-            fontWeight: 600,
-            fontSize: "16px",
-            lineHeight: "24px",
-            letterSpacing: "0px",
-            background: "#32ADDF",
-            borderRadius: "26px",
-          }}
+          className="
+            text-white bg-[#32ADDF] rounded-[26px]
+            font-poppins font-semibold
+            w-[150px] h-[45px]
+            sm:w-[180px] sm:h-[50px]
+            lg:w-[201px] lg:h-[50px]
+            text-[14px] sm:text-[15px] lg:text-[16px]
+          "
         >
           Book A Meeting
         </button>
 
         <button
-          className="font-semibold rounded-full border border-white text-white"
-          style={{
-            width: "201px",
-            height: "50px",
-            fontFamily: "Poppins, sans-serif",
-            fontWeight: 600,
-            fontSize: "16px",
-            lineHeight: "24px",
-            letterSpacing: "0px",
-            borderRadius: "26px",
-            background: "transparent",
-          }}
+          className="
+            border border-white text-white bg-transparent rounded-[26px]
+            font-poppins font-semibold
+            w-[150px] h-[45px]
+            sm:w-[180px] sm:h-[50px]
+            lg:w-[201px] lg:h-[50px]
+            text-[14px] sm:text-[15px] lg:text-[16px]
+          "
         >
           Learn More
         </button>
       </div>
     </div>
 
-    {/* Right Side Phone Image */}
-    <div className="z-10">
+    {/* Right Phone Image */}
+    <div className="z-10 hidden lg:block">
       <img
         src={Phone}
         alt="Phone"
-        style={{
-          width: "287px",
-          height: "542px",
-        }}
+        className="
+          w-[200px] h-[380px]
+          sm:w-[240px] sm:h-[460px]
+          lg:w-[287px] lg:h-[542px]
+        "
       />
     </div>
   </div>
 
-  {/* Footer Contact Info */}
+  {/* Footer Bottom Contact */}
   <div
-    className="absolute bottom-[25px] left-[105px] flex gap-[120px]"
-    style={{
-      fontFamily: "Poppins, sans-serif",
-      fontSize: "20px",
-      fontWeight: 400,
-      color: "white",
-      opacity: 0.9,
-    }}
+    className="
+      absolute bottom-[15px] left-[20px] sm:left-[60px] lg:left-[105px]
+      flex gap-[15px] sm:gap-[80px] lg:gap-[120px]
+      text-[12px] sm:text-[16px] lg:text-[20px]
+      opacity-90 font-poppins
+    "
   >
     <span>Dabboosmasr@gmail.com</span>
     <span>+201022355169</span>
   </div>
+
 </section>
+
 
 
 
@@ -245,17 +248,19 @@ export default function Home() {
         description={
           <p className="font-poppins font-[500] text-[20px] sm:text-[22px] 
           md:text-[24px] ml-0 sm:ml-[33px]">
-            Elevate your brand with innovative design, seamless development, and strategic digital solutions.
+            Elevate your brand with innovative design, seamless development, 
+            and strategic digital solutions.
           </p>
         }
       />
-      <div className="flex-1 flex items-center justify-center mt-4 sm:mt-6 lg:mt-[0]">
+      <div className="hidden lg:block flex-1 flex items-center justify-center 
+      mt-4 sm:mt-6 lg:mt-[0]">
         <img 
           src={OurServicesImg} 
           alt="Our Services" 
           className="absolute sm:max-w-[400px] lg:max-w-[480px]
-          lg:h-[136.81px] lg:static left-0 lg:left-[-70px] 
-          top-[350px] sm:top-[380px] lg:top-[400px]" 
+          lg:h-[136.81px] left-0 lg:left-[-110px] 
+          lg:top-[350px]" 
         />
       </div>
     </div>
@@ -359,7 +364,7 @@ export default function Home() {
           </div>
           <div className="flex-1 flex justify-start lg:justify-end relative">
             <img src={StatsImge} alt="Our Services" className="max-w-full h-auto top-[20px] lg:top-[55px]" 
-            style={{ width: "100%", maxWidth: "350px", position: "relative" ,right:"-100px"}} />
+            style={{ width: "100%", maxWidth: "350px", position: "relative" ,right:"-130px"}} />
           </div>
         </div>
         <div className="mx-auto px-4 sm:px-6 lg:px-0 mt-[30px] p-8 ">
@@ -493,7 +498,7 @@ export default function Home() {
       {/* ---------- FAQ & Tech Stack Section ---------- */}
 
           {/* FAQ Component */}
-          <div className="max-w-[1300px] mx-auto mb-[130px]">
+          <div className="max-w-[1300px] mx-auto mb-[50px] lg:mb-[130px]">
             <FAQTechStack faqs={faqs} />
 
             <div className=" pl-[20px] lg:pl-[40px]">
@@ -542,7 +547,8 @@ export default function Home() {
 {/* ================= Contact Section ================ */}
 
 <section
-  className="flex justify-center items-center  relative bg-[#000000]"
+  className="flex justify-between items-center relative 
+  bg-[#000000] py-8 lg:py-16"
 >
   {/* Background Overlay */}
   <div
@@ -556,23 +562,22 @@ export default function Home() {
 
   {/* Content Wrapper */}
   <div
-    className="w-full flex flex-col lg:flex-row items-center justify-between
-     gap-10 p-10 rounded-2xl relative z-10 text-white"
+    className="
+      w-full flex flex-col lg:flex-row lg:items-center justify-between gap-[15px]
+      p-6 sm:p-10 lg:p-10 
+      rounded-2xl relative z-10 text-white
+    "
   >
     {/* Left Text */}
-    <div className="text-white max-w-[500px]">
+    <div className="text-white">
       <h2
-        style={{
-          width: "396px",
-          height: "189px",
-          fontFamily: "Poppins",
-          fontWeight: 600,
-          fontSize: "64px",
-          lineHeight: "63px",
-          textIndent: "2px",
-          letterSpacing: "0px",
-        }}
-        className="text-white"
+        className="
+          text-white font-poppins font-semibold
+          text-[36px] leading-[42px]     /* mobile */
+          sm:text-[50px] sm:leading-[58px] /* tablet */
+          lg:text-[64px] lg:leading-[63px] /* desktop */
+          tracking-normal
+        "
       >
         Let’s Bring
         <br />
@@ -582,42 +587,30 @@ export default function Home() {
       </h2>
 
       <p
-        style={{
-          width: "486px",
-          height: "72px",
-          fontFamily: "Poppins",
-          fontWeight: 400,
-          fontSize: "24px",
-          lineHeight: "100%",
-          letterSpacing: "0px",
-          marginTop: "40px",
-        }}
-        className="text-white"
+        className="
+          text-white font-poppins
+          font-normal mt-6
+          text-[16px] leading-[22px] 
+          sm:text-[20px] sm:leading-[28px]
+          lg:text-[24px] lg:leading-[100%]
+          max-w-full sm:max-w-[400px] lg:max-w-[486px]
+        "
       >
         Understanding your thoughts before you even say them.
       </p>
     </div>
 
     {/* Contact Form Component */}
-    <div className="relative w-full flex justify-center">
-  
-  {/* Form Wrapper */}
-  <div className="relative z-10 w-[503px]">
-    <ContactForm />
-  </div>
-
-  {/* Image Under Form */}
-  {/* <img
-    src={card}
-    alt=""
-    className="absolute top-[-20%]  max-w-[503px]"
-  /> */}
-
-</div>
-
+    <div className="relative flex lg:justify-center lg:justify-end w-full">
+      {/* Form Wrapper */}
+      <div className="relative z-10 w-full lg:w-[503px]">
+        <ContactForm />
+      </div>
+    </div>
 
   </div>
 </section>
+
 
 {/* ================= End Contact Section ================ */}
 
